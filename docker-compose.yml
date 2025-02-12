@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_DB: "t1-demo"
+      POSTGRES_USER: "adm"
+      POSTGRES_PASSWORD: "adm"
+    volumes:
+      - .:/docker-entrypoint-initdb.d
+    ports:
+      - "5434:5432"
